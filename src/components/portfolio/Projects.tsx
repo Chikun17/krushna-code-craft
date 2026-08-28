@@ -19,13 +19,20 @@ function ProjectCard({ project, onDetails }: { project: Project; onDetails: () =
           className="absolute -bottom-16 left-1/2 h-40 w-64 -translate-x-1/2 rounded-full opacity-30 blur-3xl transition-opacity group-hover:opacity-50"
           style={{ background: "var(--gradient-accent)" }}
         />
-        <span className="relative font-mono text-5xl font-bold text-foreground/15">
-          {project.index}
-        </span>
-        <span className="absolute left-4 top-4 rounded-md border border-border bg-background/60 px-2 py-1 font-mono text-[11px] text-muted-foreground">
-          preview coming soon
-        </span>
+        {project.images?.[0] ? (
+          <img
+            src={project.images[0].src}
+            alt={`${project.title} screenshot`}
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover object-top opacity-80 transition-opacity group-hover:opacity-100"
+          />
+        ) : (
+          <span className="relative font-mono text-5xl font-bold text-foreground/15">
+            {project.index}
+          </span>
+        )}
       </div>
+
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-semibold">{project.title}</h3>

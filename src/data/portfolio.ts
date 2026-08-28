@@ -1,6 +1,6 @@
 export const profile = {
   name: "Krushna Chandra Nayak",
-  role: "Backend-Focused Developer",
+  role: "Full-Stack Developer",
   tagline:
     "Building reliable APIs, scalable backend systems, and practical full-stack applications.",
   identity: "Backend-Focused Developer | Full-Stack Developer | Software Developer",
@@ -88,6 +88,12 @@ export const services = [
   },
 ];
 
+import fixgoHome from "@/assets/fixgo-home.jpg.asset.json";
+import fixgoServices from "@/assets/fixgo-services.jpg.asset.json";
+import fixgoHow from "@/assets/fixgo-how.jpg.asset.json";
+import fixgoAbout from "@/assets/fixgo-about.jpg.asset.json";
+import fixgoContact from "@/assets/fixgo-contact.jpg.asset.json";
+
 export type Project = {
   id: string;
   index: string;
@@ -97,6 +103,7 @@ export type Project = {
   features: string[];
   github?: string;
   demo?: string;
+  images?: { src: string; label: string }[];
 };
 
 export const projects: Project[] = [
@@ -116,6 +123,13 @@ export const projects: Project[] = [
       "Server-side functionality",
     ],
     github: profile.github,
+    images: [
+      { src: fixgoHome.url, label: "Home — popular services & flow" },
+      { src: fixgoServices.url, label: "Services catalogue" },
+      { src: fixgoHow.url, label: "How it works" },
+      { src: fixgoAbout.url, label: "About page" },
+      { src: fixgoContact.url, label: "Contact & message form" },
+    ],
   },
   {
     id: "api",
