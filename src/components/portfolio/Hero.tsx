@@ -1,6 +1,8 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/portfolio";
-import profileImage from "@/assets/profile-placeholder.jpg";
+import profileAsset from "@/assets/profile.jpg.asset.json";
+
+const profileImage = profileAsset.url;
 
 export function Hero() {
   return (
@@ -74,7 +76,7 @@ export function Hero() {
           <div className="glass relative float-slow rounded-3xl p-5">
             <img
               src={profileImage}
-              alt="Portrait placeholder for Krushna Chandra Nayak"
+              alt="Portrait of Krushna Chandra Nayak"
               width={768}
               height={768}
               className="aspect-square w-full rounded-2xl object-cover"
