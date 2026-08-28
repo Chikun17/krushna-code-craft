@@ -1,8 +1,8 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/portfolio";
-import profileAsset from "@/assets/profile.jpg.asset.json";
+import profileImage from "@/assets/profile-dark.jpg";
 
-const profileImage = profileAsset.url;
+
 
 export function Hero() {
   return (
