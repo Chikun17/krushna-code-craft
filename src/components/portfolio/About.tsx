@@ -1,7 +1,9 @@
 import { GraduationCap, Code2, Rocket } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import { Reveal, Section, SectionHeading } from "./Section";
-import profileImage from "@/assets/profile-placeholder.jpg";
+import profileAsset from "@/assets/profile.jpg.asset.json";
+
+const profileImage = profileAsset.url;
 
 export function About() {
   return (
@@ -13,7 +15,7 @@ export function About() {
           <div className="glass rounded-3xl p-5">
             <img
               src={profileImage}
-              alt="Portrait placeholder for Krushna Chandra Nayak"
+              alt="Portrait of Krushna Chandra Nayak"
               loading="lazy"
               width={768}
               height={768}
