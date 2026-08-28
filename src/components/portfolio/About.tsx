@@ -1,9 +1,9 @@
 import { GraduationCap, Code2, Rocket } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import profileImage from "@/assets/profile-dark.jpg";
 import { Reveal, Section, SectionHeading } from "./Section";
-import profileAsset from "@/assets/profile.jpg.asset.json";
 
-const profileImage = profileAsset.url;
+
 
 export function About() {
   return (
