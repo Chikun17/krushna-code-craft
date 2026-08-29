@@ -69,11 +69,8 @@ function ProjectCard({ project, onDetails }: { project: Project; onDetails: () =
             >
               <ExternalLink size={15} /> Live Demo
             </a>
-          ) : (
-            <span className="inline-flex items-center gap-2 rounded-xl border border-dashed border-border px-3.5 py-2 text-sm text-muted-foreground">
-              <ExternalLink size={15} /> Demo soon
-            </span>
-          )}
+          ) : null}
+
           <button
             type="button"
             onClick={onDetails}
