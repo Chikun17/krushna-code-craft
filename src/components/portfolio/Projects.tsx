@@ -69,11 +69,8 @@ function ProjectCard({ project, onDetails }: { project: Project; onDetails: () =
             >
               <ExternalLink size={15} /> Live Demo
             </a>
-          ) : (
-            <span className="inline-flex items-center gap-2 rounded-xl border border-dashed border-border px-3.5 py-2 text-sm text-muted-foreground">
-              <ExternalLink size={15} /> Demo soon
-            </span>
-          )}
+          ) : null}
+
           <button
             type="button"
             onClick={onDetails}
@@ -95,7 +92,7 @@ export function Projects() {
       <SectionHeading
         eyebrow="projects"
         title="Work that shows how I build."
-        subtitle="Links, screenshots, and live demos will be added as each project is published."
+        subtitle="A closer look at the applications and systems I build end to end."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -107,13 +104,30 @@ export function Projects() {
       </div>
 
       <Dialog open={active !== null} onOpenChange={(open) => !open && setActive(null)}>
-        <DialogContent className="glass max-w-lg">
+        <DialogContent className="glass max-h-[85vh] max-w-2xl overflow-y-auto">
           {active ? (
             <>
               <DialogHeader>
                 <DialogTitle className="text-xl">{active.title}</DialogTitle>
                 <DialogDescription>{active.description}</DialogDescription>
               </DialogHeader>
+              {active.images?.length ? (
+                <div className="space-y-3">
+                  {active.images.map((img) => (
+                    <figure key={img.src} className="overflow-hidden rounded-xl border border-border">
+                      <img
+                        src={img.src}
+                        alt={`${active.title} — ${img.label}`}
+                        loading="lazy"
+                        className="w-full object-cover"
+                      />
+                      <figcaption className="border-t border-border bg-card/60 px-3 py-2 font-mono text-[11px] text-muted-foreground">
+                        {img.label}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              ) : null}
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
                   Key features
